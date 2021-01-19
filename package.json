@@ -1,0 +1,24 @@
+{
+  "name": "employeeTracker_CLI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylorceneviva/employeeTracker_CLI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taylorceneviva/employeeTracker_CLI/issues"
+  },
+  "homepage": "https://github.com/taylorceneviva/employeeTracker_CLI#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
