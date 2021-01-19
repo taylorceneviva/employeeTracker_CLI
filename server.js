@@ -1,4 +1,6 @@
-var mysql = require("mysql");
+const mysql = require("mysql");
+const inquirer = require("inquirer");
+//const cTable = require('console.table');
 
 
 var connection = mysql.createConnection({
@@ -9,9 +11,21 @@ var connection = mysql.createConnection({
   database: "employeeTracker_db"
 });
 
-connection.connect(err => {
-
-    if (err) throw err;
-    console.log("connected!");
-
+connection.connect(function(err) {
+    if (err) throw err
+    console.log("Connected as Id" + connection.threadId)
+    
 });
+
+function createPrompt() {
+    inquirer.prompt([
+    {
+        type: "list",
+        message: "What would you like to do?",
+        name: "choice",
+        choices: ["View All Employees", "View Employees By Role","View Empolyees By Deparment","Add Employee","Add Role","Add Department", "Update Employee Role"]
+    },
+])
+}
+
+createPrompt();
