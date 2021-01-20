@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
     if (err) throw err;
     console.log("connected as id " + connection.threadId);
-    console.log("connected!");
+    //console.log("connected!");
     createPrompt();
 });
 
@@ -58,7 +58,13 @@ function createPrompt() {
 
 
 function allEmployees(){
-
+    
+    
+    function(err, res) {
+      if (err) throw err
+      console.table(res)
+      startPrompt()
+  }
 
 }
 
@@ -71,15 +77,46 @@ function byDepartment() {
 }
 
 function addEmployee() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter employee's first name.",
+            name: "firstName",
+        },
+        {
+            type: "input",
+            message: "Enter employee's last name.",
+            name: "lastName",
+        },
+        {
+            type: "input",
+            message: "Enter employee's department.",
+            name: "department",
+        }
+    )};
 
-}
 
 function addRole() {
-
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter employee's role.",
+            name: "newRole"
+        },
+        {
+            type: "input",
+            message: "Enter employee's salary.",
+            name: "salary"
+        }
 }
 
 function addDepartment() {
-
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter new department Namee",
+            name: "newDepartment"
+        },
 }
 
 
